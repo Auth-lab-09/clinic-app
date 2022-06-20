@@ -1,6 +1,6 @@
 'use strict';
 require('dotenv').config();
-const doctorTable = require('./doctor.mode');
+const doctorTable = require('./doctor.model');
 const patientTable = require('./patient.model');
 const Collection = require('./lib/collection.model');
 const POSTGRES_URI =
