@@ -25,7 +25,7 @@ This application employ the following programming concepts: API/Auth server must
 
 ## Link for PR
 
-[Pull Request]()
+[Pull Request](https://github.com/Auth-lab-09/clinic-app/pull/8)
 
 ## UML Diagram
 
