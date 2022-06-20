@@ -1,5 +1,7 @@
 # clinic-app
-This application employ the following programming concepts:  API/Auth server must be deployed Use of an API server to perform database operations Use of login/auth/acl to control access to our resources
+
+This application employ the following programming concepts: API/Auth server must be deployed Use of an API server to perform database operations Use of login/auth/acl to control access to our resources
+
 ## Documentation
 
 ## Link for Heroku
@@ -11,3 +13,5 @@ This application employ the following programming concepts:  API/Auth server mus
 ## Link for PR
 
 ## UML Diagram
+
+![UML](<./asset/UML%20class%20(5).png>)
