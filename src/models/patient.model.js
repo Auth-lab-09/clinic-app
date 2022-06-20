@@ -1,7 +1,19 @@
-// first name
+'use strict';
 
-// last name
-
-// diagnose
-
-// cured : T , F
+module.exports = (sequelize, DataTypes) => {
+  return sequelize.define('patients', {
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+    },
+    diagnose: {
+      type: DataTypes.STRING,
+    },
+    cured: {
+      type: DataTypes.ENUM('true', 'fase'),
+    },
+  });
+};
