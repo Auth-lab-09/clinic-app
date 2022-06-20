@@ -8,7 +8,9 @@ This application employ the following programming concepts: API/Auth server must
 
 [Heroku](https://bahaa-ibraheem-auth-server.herokuapp.com/)
 
-## Link for Action
+## Link for Actions
+
+[Actions](https://github.com/Auth-lab-09/clinic-app/actions)
 
 ## Link for PR
 
