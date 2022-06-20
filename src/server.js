@@ -6,14 +6,16 @@ const notFound = require('./error-handlers/404');
 const errorHandler = require('./error-handlers/500');
 
 const authRouter = require('./routes/signin-up.route');
-const patientRouter = require('./routes/patient.route');
+const Routes = require('./routes/routes');
+const doctorRouter = require('./routes/doctor.route');
 
 const app = express();
 
 app.use(express.json());
 
 app.use(authRouter);
-app.use(patientRouter);
+app.use('/api', Routes);
+app.use(doctorRouter);
 
 app.use('*', notFound);
 app.use(errorHandler);
