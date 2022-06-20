@@ -34,9 +34,14 @@ const doctor = (sequelize, Datatypes) => {
       type: Datatypes.VIRTUAL,
     },
   });
+  model.beforeCreate(async (user) => {
+    let hashedPass = await bcrypt.hash(user.password, 10);
+    user.password = hashedPass;
+  });
   model.authenticateBasic = async (username, password) => {
-    let user = await this.findOne({ where: { username: username } });
+    let user = await model.findOne({ where: { username: username } });
     let valid = await bcrypt.compare(password, user.password);
+
     if (valid) {
       let newToken = jwt.sign({ username: user.username }, SECRET, {
         expiresIn: '1h',
@@ -49,7 +54,7 @@ const doctor = (sequelize, Datatypes) => {
   };
   model.authenticateToken = async (token) => {
     const parsedToken = jwt.verify(token, SECRET);
-    const user = await this.findOne({
+    const user = await model.findOne({
       where: { username: parsedToken.username },
     });
     if (user.username) {

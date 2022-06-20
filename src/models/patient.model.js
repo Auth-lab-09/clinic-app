@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     cured: {
-      type: DataTypes.ENUM('true', 'fase'),
+      type: DataTypes.ENUM('true', 'false'),
     },
   });
 };

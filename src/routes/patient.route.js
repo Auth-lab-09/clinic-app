@@ -1,6 +1,6 @@
 'use strict';
-// get 
-// acl , bearer 
+// get
+// acl , bearer
 
 const express = require('express');
 const dataModels = require('../models/index.model');
@@ -22,8 +22,18 @@ patientRouter.param('model', (req, res, next) => {
 patientRouter.get('/:model', bearerAuth, permissions('read'), handleGetAll);
 patientRouter.get('/:model/:id', bearerAuth, permissions('read'), handleGetOne);
 patientRouter.post('/:model', bearerAuth, permissions('create'), handleCreate);
-patientRouter.put('/:model/:id', bearerAuth, permissions('update'), handleUpdate);
-patientRouter.delete('/:model/:id', bearerAuth, permissions('delete'), handleDelete);
+patientRouter.put(
+  '/:model/:id',
+  bearerAuth,
+  permissions('update'),
+  handleUpdate
+);
+patientRouter.delete(
+  '/:model/:id',
+  bearerAuth,
+  permissions('delete'),
+  handleDelete
+);
 
 async function handleGetAll(req, res) {
   let allRecords = await req.model.get();
@@ -32,7 +42,7 @@ async function handleGetAll(req, res) {
 
 async function handleGetOne(req, res) {
   const id = req.params.id;
-  let theRecord = await req.model.get(id)
+  let theRecord = await req.model.get(id);
   res.status(200).json(theRecord);
 }
 
@@ -45,7 +55,7 @@ async function handleCreate(req, res) {
 async function handleUpdate(req, res) {
   const id = req.params.id;
   const obj = req.body;
-  let updatedRecord = await req.model.update(id, obj)
+  let updatedRecord = await req.model.update(id, obj);
   res.status(201).json(updatedRecord);
 }
 
