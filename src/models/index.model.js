@@ -5,10 +5,9 @@ const patientTable = require('./patient.model');
 const POSTGRES_URI =
   process.env.NODE_ENV === 'test' ? 'sqlite:memory' : process.env.DATABASE_URL;
 
-const sequelize = require('sequelize');
 const { Sequelize, DataTypes } = require('sequelize');
 
-sequelizeOptions =
+const sequelizeOptions =
   process.env.NODE_ENV === 'production'
     ? {
         dialectOptions: {
